@@ -20,7 +20,8 @@ def _key():
     if not k:
         raise RuntimeError(
             "ZILLAPI_KEY environment variable is not set. "
-            "Get a free key with 100 credits at https://zillapi.com/signup"
+            "Get a free key in 30 seconds at https://zillapi.com/signup "
+            "(100 credits, no card required). Then export ZILLAPI_KEY=zk_..."
         )
     return k
 

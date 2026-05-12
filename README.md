@@ -1,8 +1,10 @@
 # zillow-skills
 
-Agent skills for U.S. property data via [Zillapi.com](https://zillapi.com).
+**Agent skills for U.S. Zillow property data.** Three drop-in skills that let any agent look up Zestimates, listings, photos, schools, taxes, price history, and agent contact over the [Zillapi REST API](https://zillapi.com).
 
-Three drop-in skills that let agents look up Zillow property data — Zestimates, listings, photos, schools, taxes, price history, agent contact — over the Zillapi REST API. Pure Python standard library, no dependencies, MIT-0 licensed.
+Free to use — [grab a key](https://zillapi.com/signup) (100 credits, no card required) and you're calling Zillow data from Claude, ChatGPT, Cursor, or your own agent loop in under two minutes.
+
+Pure Python standard library. No dependencies. MIT-0 licensed.
 
 ## Install
 
@@ -35,7 +37,7 @@ Set the `ZILLAPI_KEY` environment variable to your Zillapi API key (format `zk_.
 export ZILLAPI_KEY="zk_..."
 ```
 
-Get a free key with 100 credits at [zillapi.com/signup](https://zillapi.com/signup) — no card required.
+**[Get a free key in 30 seconds](https://zillapi.com/signup)** — 100 credits, no card required. The same key works for these skills, the [hosted MCP server](https://api.zillapi.com/mcp), and direct REST calls.
 
 ## Pricing
 
