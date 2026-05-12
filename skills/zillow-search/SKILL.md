@@ -1,6 +1,6 @@
 ---
 name: zillow-search
-version: 1.0.0
+version: 1.0.1
 description: Search U.S. property listings by location or bounding box, price, beds, and home type via Zillapi.com.
 license: MIT-0
 author: Zillapi
@@ -13,20 +13,35 @@ tags:
   - search
   - api
   - mcp
+metadata:
+  openclaw:
+    primaryEnv: ZILLAPI_KEY
+    homepage: https://zillapi.com
+    requires:
+      env:
+        - ZILLAPI_KEY
 ---
 
 # zillow-search
 
-Focused listing-search skill. Use whenever the user wants to find homes matching a set of criteria — not look up one specific property.
+Focused listing-search skill. Use only when the user **explicitly asks** to find homes matching a set of criteria — not when an address or location merely appears in passing.
 
 ## When to use this skill
+
+**DO use when the user asks:**
 
 - "Find 3-bedroom houses under $500k in Austin, TX"
 - "What's for rent under $2,500 in 78704?"
 - "Show me sold comparables for this neighborhood in the last 90 days"
 - "Search for waterfront condos in Miami"
 
-For looking up one known property, use [`zillow-full`](https://github.com/nikhonit/zillow-skills/tree/main/skills/zillow-full) — `lookup_property_by_address` or `lookup_property_by_url`.
+**Do NOT use when:**
+
+- A location appears incidentally in context
+- The user mentions an area without asking to search for listings there
+- The user has a single known property in mind — use [`zillow-full`](https://github.com/nikhonit/zillow-skills/tree/main/skills/zillow-full)'s `lookup_property_by_address` instead
+
+Each result returned consumes one credit. For broad queries, narrow the filters or cap `max_items` before calling.
 
 ## Tools
 

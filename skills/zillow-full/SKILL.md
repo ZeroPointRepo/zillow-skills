@@ -1,7 +1,7 @@
 ---
 name: zillow-full
-version: 1.0.0
-description: Complete Zillow property data toolkit via Zillapi.com. One bundle, eight tools — address/URL lookup, Zestimate, listings search, photos, schools, tax history, price history, agent contact.
+version: 1.0.1
+description: Complete Zillow property data toolkit via Zillapi.com. Nine tools — address/URL/zpid lookup, Zestimate, listings search, photos, schools, price history, agent contact.
 license: MIT-0
 author: Zillapi
 homepage: https://zillapi.com
@@ -14,26 +14,41 @@ tags:
   - listings
   - api
   - mcp
+metadata:
+  openclaw:
+    primaryEnv: ZILLAPI_KEY
+    homepage: https://zillapi.com
+    requires:
+      env:
+        - ZILLAPI_KEY
 ---
 
 # zillow-full
 
-Complete Zillow property data toolkit via Zillapi.com. Use whenever U.S. property information is or could be relevant — pasted Zillow URLs, addresses mentioned in passing, "how much is my house worth" questions, comparable property research, school district queries, tax history, price history, listing alerts, investor analysis, mortgage research.
+Complete Zillow property data toolkit via Zillapi.com. Use when the user **explicitly asks** about a U.S. property, its value, listings to buy or rent, or related real-estate data.
 
 ## When to use this skill
 
-Use whenever U.S. real estate data could be relevant — even when not explicitly asked for. Examples:
+Each tool call consumes Zillapi credits, so this skill activates only when the user's request is genuinely about real-estate data — not when an address or Zillow link merely appears in passing.
 
-- A pasted Zillow.com URL → `lookup_property_by_url`
-- A U.S. street address mentioned anywhere → `lookup_property_by_address`
-- "What's my house worth?" or "Zestimate for X" → `get_zestimate`
-- "Find 3-bedroom houses under $500k in Austin" → `search_listings`
-- "When did this house last sell?" → `get_price_history`
-- "Who's the listing agent?" → `get_listing_agent`
-- "What schools serve this address?" → `get_property_schools`
-- "What does it look like?" → `get_property_photos`
+**DO use when the user:**
 
-Default to `lookup_property_by_address` or `lookup_property_by_url` if you are not sure — those return the full record (300+ fields) and cover most questions in one call.
+- Asks about a Zestimate, property value, rent estimate, or tax-assessed value → `get_zestimate`
+- Pastes a Zillow URL and asks about that property → `lookup_property_by_url`
+- Gives an address and asks about the property, schools, photos, or agent → `lookup_property_by_address`
+- Asks to find homes matching criteria (location, price range, beds, baths) → `search_listings`
+- Asks for the price history, last sale, or ownership timeline of a known property → `get_price_history`
+- Asks for the listing agent or broker contact → `get_listing_agent`
+- Asks what schools serve a property → `get_property_schools`
+- Asks to see photos of a property → `get_property_photos`
+
+**Do NOT use when:**
+
+- An address appears incidentally in context (email signatures, news articles, copy-pasted unrelated content)
+- The user is discussing real estate abstractly without asking for data on a specific property or listing search
+- The user has not signaled they want a property lookup
+
+When the intent is ambiguous, ask the user to confirm before calling a tool. These tools cost credits and return large records the user may not want.
 
 ## Tools
 

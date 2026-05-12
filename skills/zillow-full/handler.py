@@ -13,7 +13,7 @@ import urllib.parse
 import urllib.request
 
 API_BASE = "https://api.zillapi.com/v1"
-USER_AGENT = "zillow-skills/1.0.0 (+https://github.com/nikhonit/zillow-skills)"
+USER_AGENT = "zillow-skills/1.0.1 (+https://github.com/nikhonit/zillow-skills)"
 TIMEOUT_SECONDS = 30
 
 

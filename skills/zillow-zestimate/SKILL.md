@@ -1,6 +1,6 @@
 ---
 name: zillow-zestimate
-version: 1.0.0
+version: 1.0.1
 description: Zillow Zestimate (property valuation) and rent Zestimate lookups via Zillapi.com. One tool, minimum surface area.
 license: MIT-0
 author: Zillapi
@@ -13,19 +13,34 @@ tags:
   - valuation
   - api
   - mcp
+metadata:
+  openclaw:
+    primaryEnv: ZILLAPI_KEY
+    homepage: https://zillapi.com
+    requires:
+      env:
+        - ZILLAPI_KEY
 ---
 
 # zillow-zestimate
 
-Focused valuation skill. Use whenever the user asks for a property value — the Zestimate, rent Zestimate, tax assessed value, or last sale price.
+Focused valuation skill. Use only when the user **explicitly asks** for a property value — the Zestimate, rent Zestimate, tax-assessed value, or last sale price.
 
 ## When to use this skill
+
+**DO use when the user asks:**
 
 - "What's the Zestimate on 123 Main St?"
 - "How much is my house worth?"
 - "What's the rental Zestimate?"
 - "What did this house last sell for?"
 - "What's the tax-assessed value?"
+
+**Do NOT use when:**
+
+- An address appears incidentally in context (email signatures, unrelated documents)
+- The user mentions a property without asking for its value
+- The user has not signaled they want a valuation lookup
 
 If you also need photos, schools, agent contact, or price history, use [`zillow-full`](https://github.com/nikhonit/zillow-skills/tree/main/skills/zillow-full) instead — it bundles everything in one install.
 

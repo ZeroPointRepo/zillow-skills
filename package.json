@@ -1,6 +1,6 @@
 {
   "name": "zillow-skills",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Agent skills for U.S. property data via Zillapi.com",
   "homepage": "https://github.com/nikhonit/zillow-skills",
   "repository": {
