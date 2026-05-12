@@ -1,0 +1,27 @@
+{
+  "name": "zillow-skills",
+  "version": "1.0.0",
+  "description": "Agent skills for U.S. property data via Zillapi.com",
+  "homepage": "https://github.com/nikhonit/zillow-skills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikhonit/zillow-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikhonit/zillow-skills/issues"
+  },
+  "author": "Zillapi",
+  "license": "MIT-0",
+  "keywords": [
+    "zillow",
+    "zillapi",
+    "agent-skills",
+    "mcp",
+    "real-estate",
+    "property-data",
+    "zestimate",
+    "claude",
+    "openai",
+    "cursor"
+  ]
+}

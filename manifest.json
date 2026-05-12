@@ -1,0 +1,26 @@
+{
+  "name": "zillow-skills",
+  "version": "1.0.0",
+  "description": "Agent skills for U.S. property data via Zillapi.com",
+  "author": "Zillapi",
+  "homepage": "https://zillapi.com",
+  "repository": "https://github.com/nikhonit/zillow-skills",
+  "license": "MIT-0",
+  "skills": [
+    {
+      "name": "zillow-full",
+      "path": "skills/zillow-full",
+      "description": "Complete Zillow property data toolkit — address/URL lookup, Zestimate, search, price history, photos, schools, agent."
+    },
+    {
+      "name": "zillow-zestimate",
+      "path": "skills/zillow-zestimate",
+      "description": "Zillow Zestimate (property valuation and rent Zestimate) lookups by address or zpid."
+    },
+    {
+      "name": "zillow-search",
+      "path": "skills/zillow-search",
+      "description": "Search U.S. property listings by location or bounding box, price, beds, baths, and home type."
+    }
+  ]
+}
