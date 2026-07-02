@@ -41,13 +41,7 @@ export ZILLAPI_KEY="zk_..."
 
 ## Pricing
 
-| Plan | Price | Credits | Rate limit | Top-ups |
-|---|---|---|---|---|
-| Free | $0 | 100 (one-time) | 20/min | not available |
-| Monthly | $5/mo | 1,000/month | 200/min | $4 per 1,000 |
-| Annual | $54/yr | 12,000 upfront | 300/min | $3 per 1,000 |
-
-One credit equals one property record returned. Failed calls do not consume credits.
+Free tier: 100 credits at signup — no credit card, 20 requests/minute. One credit equals one property record returned. Failed calls do not consume credits. Full pricing: [zillapi.com/pricing](https://zillapi.com/pricing).
 
 ## Source
 
