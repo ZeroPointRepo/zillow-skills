@@ -1,6 +1,8 @@
-# zillow-skills
+# Zillow Skills — Property Data, Zestimates & Listings for AI Agents
 
 Zillow Skills let your AI agent **run comps, pull Zestimates, and scan for-sale, sold & rental listings** across 160M+ U.S. homes — plus photos, taxes, schools, and full price history, just by asking. No code, no scraping.
+
+Zillapi is an independent service for Zillow-sourced data — not affiliated with, endorsed by, or sponsored by Zillow.
 
 Free to use — [grab a key](https://zillapi.com/signup) (100 credits, no card required) and you're calling Zillow data from Claude, ChatGPT, Cursor, or your own agent loop in under two minutes.
 
