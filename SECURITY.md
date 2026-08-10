@@ -10,9 +10,9 @@ We will acknowledge receipt within 72 hours and aim to publish a fix or mitigati
 
 The handlers in this repository use only the Python standard library:
 
-- `urllib.request`, `urllib.parse`, `urllib.error` — HTTPS calls to `api.zillapi.com`
-- `json` — request/response serialization
-- `os` — reading the `ZILLAPI_KEY` environment variable
+- `urllib.request`, `urllib.parse`, `urllib.error`: HTTPS calls to `api.zillapi.com`
+- `json`: request/response serialization
+- `os`: reading the `ZILLAPI_KEY` environment variable
 
 There are no third-party packages, no transitive dependencies, and no build step. The only network destination is `https://api.zillapi.com`.
 

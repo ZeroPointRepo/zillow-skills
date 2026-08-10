@@ -1,4 +1,4 @@
-"""Smoke tests for the zillow-full handler. No network — urlopen is mocked."""
+"""Smoke tests for the zillow-full handler. No network, urlopen is mocked."""
 
 import json
 import os

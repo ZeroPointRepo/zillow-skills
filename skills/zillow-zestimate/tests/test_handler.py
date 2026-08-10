@@ -1,4 +1,4 @@
-"""Smoke tests for the zillow-zestimate handler. No network — urlopen is mocked."""
+"""Smoke tests for the zillow-zestimate handler. No network, urlopen is mocked."""
 
 import os
 import sys

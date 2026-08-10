@@ -1,18 +1,19 @@
 ---
 name: zillow-zestimate
-version: 1.0.1
-description: Zillow Zestimate (property valuation) and rent Zestimate lookups via Zillapi.com. One tool, minimum surface area.
+version: 1.1.0
+description: Looks up the Zillow Zestimate, rent Zestimate, tax assessed value and last sold price of a US property via the zillapi API. Use when the user asks what a home is worth, its Zestimate, rental estimate, valuation or price anchor, giving an address, zpid or zillow.com link. Do not use for listing searches, photos or school data (zillow-full covers those), or when an address merely appears in passing without a valuation request.
 license: MIT-0
-author: Zillapi
+author: Zero Point Studio
 homepage: https://zillapi.com
-repository: https://github.com/nikhonit/zillow-skills
+repository: https://github.com/ZeroPointRepo/zillow-skills
 tags:
+  - zillapi
   - zillow
   - zestimate
   - real-estate
   - valuation
+  - property-data
   - api
-  - mcp
 metadata:
   openclaw:
     primaryEnv: ZILLAPI_KEY
@@ -24,29 +25,15 @@ metadata:
 
 # zillow-zestimate
 
-Focused valuation skill. Use only when the user **explicitly asks** for a property value — the Zestimate, rent Zestimate, tax-assessed value, or last sale price.
+Single-purpose valuation skill. Fire only on an explicit valuation request. When the intent is ambiguous, confirm with the user first: calls consume credits.
 
-## When to use this skill
+If the user also wants photos, schools, agent contact or price history, use [zillow-full](https://github.com/ZeroPointRepo/zillow-skills/tree/main/skills/zillow-full) instead.
 
-**DO use when the user asks:**
+## Tool
 
-- "What's the Zestimate on 123 Main St?"
-- "How much is my house worth?"
-- "What's the rental Zestimate?"
-- "What did this house last sell for?"
-- "What's the tax-assessed value?"
+### `get_zestimate` (1 credit)
 
-**Do NOT use when:**
-
-- An address appears incidentally in context (email signatures, unrelated documents)
-- The user mentions a property without asking for its value
-- The user has not signaled they want a valuation lookup
-
-If you also need photos, schools, agent contact, or price history, use [`zillow-full`](https://github.com/nikhonit/zillow-skills/tree/main/skills/zillow-full) instead — it bundles everything in one install.
-
-## Tools
-
-### `get_zestimate` — 1 credit
+Pass either `zpid` (preferred: cheaper, cache-served) or `address`. With only `address`, the handler resolves the zpid first.
 
 Returns:
 
@@ -62,19 +49,30 @@ Returns:
 }
 ```
 
-Pass either `zpid` (preferred — cheaper) or `address`. If only `address` is given, the handler resolves the zpid first.
-
 ## Authentication
 
-Set `ZILLAPI_KEY` to your Zillapi API key (format `zk_...`). Free key with 100 credits at <https://zillapi.com/signup> — no card.
+Set `ZILLAPI_KEY` to your Zillapi API key (format `zk_...`).
 
-## Pricing
+```bash
+export ZILLAPI_KEY="zk_..."
+```
 
-| Plan | Price | Credits | Rate limit | Top-ups |
-|---|---|---|---|---|
-| Free | $0 | 100 (one-time) | 20/min | not available |
-| Monthly | $5/mo | 1,000/month | 200/min | $4 per 1,000 |
-| Annual | $54/yr | 12,000 upfront | 300/min | $3 per 1,000 |
+Free key at <https://zillapi.com/signup>: 100 credits, no card required. Plans and current prices: <https://zillapi.com/pricing/>. Failed calls are not charged.
+
+## Errors
+
+The handler returns dicts, never raises:
+
+- `{"error": "auth", ...}`: `ZILLAPI_KEY` missing or invalid
+- `{"error": "HTTP 404", ...}`: property not found
+- `{"error": "HTTP 429", ...}`: rate limited, back off and retry
+- `{"error": "network", ...}`: DNS or connection failure
+
+## Reference
+
+- OpenAPI spec: <https://zillapi.com/openapi.json>
+- REST docs: <https://zillapi.com/api/properties/>
+- Hosted MCP server (alternative to this skill): <https://api.zillapi.com/mcp>
 
 ## Trademark
 

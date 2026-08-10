@@ -1,10 +1,10 @@
-# Zillow Skills — Property Data, Zestimates & Listings for AI Agents
+# Zillow Skills: Property Data, Zestimates & Listings for AI Agents
 
-Zillow Skills let your AI agent **run comps, pull Zestimates, and scan for-sale, sold & rental listings** across 160M+ U.S. homes — plus photos, taxes, schools, and full price history, just by asking. No code, no scraping.
+Zillow Skills let your AI agent **run comps, pull Zestimates, and scan for-sale, sold & rental listings** across 160M+ U.S. homes, plus photos, taxes, schools, and full price history, just by asking. No code, no scraping.
 
-Zillapi is an independent service for Zillow-sourced data — not affiliated with, endorsed by, or sponsored by Zillow.
+Zillapi is an independent service for Zillow-sourced data, not affiliated with, endorsed by, or sponsored by Zillow.
 
-Free to use — [grab a key](https://zillapi.com/signup) (100 credits, no card required) and you're calling Zillow data from Claude, ChatGPT, Cursor, or your own agent loop in under two minutes.
+Free to use: [grab a key](https://zillapi.com/signup) (100 credits, no card required) and you're calling Zillow data from Claude, ChatGPT, Cursor, or your own agent loop in under two minutes.
 
 Pure Python standard library. No dependencies. MIT-0 licensed.
 
@@ -15,17 +15,17 @@ Pure Python standard library. No dependencies. MIT-0 licensed.
 npx clawhub@latest install zillow-full
 
 # Hermes Agent
-hermes skills install skills-sh/nikhonit/zillow-skills/skills/zillow-full
+hermes skills install skills-sh/ZeroPointRepo/zillow-skills/skills/zillow-full
 
 # Generic agent skills (Claude Code, Cursor, Cline)
-npx skills add nikhonit/zillow-skills
+npx skills add ZeroPointRepo/zillow-skills
 ```
 
 ## Skills in this repo
 
 | Skill | Purpose | Cost |
 |---|---|---|
-| [`zillow-full`](skills/zillow-full) | Complete property data toolkit — address lookup, URL lookup, Zestimate, search, history, photos, schools, agent | 1 credit per call |
+| [`zillow-full`](skills/zillow-full) | Complete property data toolkit: address lookup, URL lookup, Zestimate, search, history, photos, schools, agent | 1 credit per call |
 | [`zillow-zestimate`](skills/zillow-zestimate) | Zestimate-only valuation lookups (lighter response) | 1 credit per call |
 | [`zillow-search`](skills/zillow-search) | Bounding-box and location-based listing search | 1 credit per listing returned |
 
@@ -39,11 +39,11 @@ Set the `ZILLAPI_KEY` environment variable to your Zillapi API key (format `zk_.
 export ZILLAPI_KEY="zk_..."
 ```
 
-**[Get a free key in 30 seconds](https://zillapi.com/signup)** — 100 credits, no card required. The same key works for these skills, the [hosted MCP server](https://api.zillapi.com/mcp), and direct REST calls.
+**[Get a free key in 30 seconds](https://zillapi.com/signup)**: 100 credits, no card required. The same key works for these skills, the [hosted MCP server](https://api.zillapi.com/mcp), and direct REST calls.
 
 ## Pricing
 
-Free tier: 100 credits at signup — no credit card, 20 requests/minute. One credit equals one property record returned. Failed calls do not consume credits. Full pricing: [zillapi.com/pricing](https://zillapi.com/pricing).
+Free tier: 100 credits at signup, no credit card. One credit equals one property record returned. Failed calls do not consume credits. Full pricing: [zillapi.com/pricing](https://zillapi.com/pricing).
 
 ## Source
 
@@ -57,7 +57,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY
 
 ## License
 
-[MIT No Attribution](LICENSE). Fork, ship, sublicense — no attribution required.
+[MIT No Attribution](LICENSE). Fork, ship, sublicense with no attribution required.
 
 ## Trademark
 

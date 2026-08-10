@@ -1,5 +1,5 @@
 """
-zillow-zestimate skill handler — single-purpose Zestimate lookups.
+zillow-zestimate skill handler: single-purpose Zestimate lookups.
 
 Pure standard library. Bearer token in ZILLAPI_KEY.
 """
@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 
 API_BASE = "https://api.zillapi.com/v1"
-USER_AGENT = "zillow-skills/1.0.1 (+https://github.com/nikhonit/zillow-skills)"
+USER_AGENT = "zillow-skills/1.1.0 (+https://github.com/ZeroPointRepo/zillow-skills)"
 TIMEOUT_SECONDS = 30
 
 
@@ -63,7 +63,7 @@ def get_zestimate(zpid=None, address=None):
     """
     Get the Zestimate, rent Zestimate, tax assessed value, and last-sold price.
 
-    Pass either zpid (preferred — cheaper) or address. If only address is given,
+    Pass either zpid (preferred, cheaper) or address. If only address is given,
     the handler resolves the zpid first, then calls the dedicated zestimate endpoint.
 
     Returns:

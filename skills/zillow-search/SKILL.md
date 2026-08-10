@@ -1,18 +1,19 @@
 ---
 name: zillow-search
-version: 1.0.1
-description: Search U.S. property listings by location or bounding box, price, beds, and home type via Zillapi.com.
+version: 1.1.0
+description: Searches US property listings for sale, for rent or sold via the zillapi API, filtered by location or bounding box, price, beds, baths, square footage, year built, home type and days on Zillow. Use when the user asks to find homes, condos, apartments, rentals, sold comparables or listings matching criteria in a city, ZIP or area. Do not use for a single known property (zillow-full covers lookups) or when a location appears incidentally. Each returned listing costs one credit, so keep max_items tight.
 license: MIT-0
-author: Zillapi
+author: Zero Point Studio
 homepage: https://zillapi.com
-repository: https://github.com/nikhonit/zillow-skills
+repository: https://github.com/ZeroPointRepo/zillow-skills
 tags:
+  - zillapi
   - zillow
   - real-estate
   - listings
   - search
+  - property-data
   - api
-  - mcp
 metadata:
   openclaw:
     primaryEnv: ZILLAPI_KEY
@@ -24,58 +25,55 @@ metadata:
 
 # zillow-search
 
-Focused listing-search skill. Use only when the user **explicitly asks** to find homes matching a set of criteria — not when an address or location merely appears in passing.
+Listing-search skill. Fire only on an explicit search request. Credits scale with results (1 per listing returned), so narrow filters and cap `max_items` before calling; confirm with the user when a query looks broad.
 
-## When to use this skill
+For one known property use [zillow-full](https://github.com/ZeroPointRepo/zillow-skills/tree/main/skills/zillow-full)'s `lookup_property_by_address` instead.
 
-**DO use when the user asks:**
+## Tool
 
-- "Find 3-bedroom houses under $500k in Austin, TX"
-- "What's for rent under $2,500 in 78704?"
-- "Show me sold comparables for this neighborhood in the last 90 days"
-- "Search for waterfront condos in Miami"
+### `search_listings` (1 credit per result, up to 50)
 
-**Do NOT use when:**
+Pass either `location` or `bbox` (at least one required):
 
-- A location appears incidentally in context
-- The user mentions an area without asking to search for listings there
-- The user has a single known property in mind — use [`zillow-full`](https://github.com/nikhonit/zillow-skills/tree/main/skills/zillow-full)'s `lookup_property_by_address` instead
-
-Each result returned consumes one credit. For broad queries, narrow the filters or cap `max_items` before calling.
-
-## Tools
-
-### `search_listings` — 1 credit per result, up to 50
-
-Search active for-sale, for-rent, or sold listings.
+- `location`: city, ZIP or neighborhood string (`"Austin, TX"`, `"78704"`, `"Brooklyn, NY"`)
+- `bbox`: `"west,south,east,north"` in decimal degrees
 
 Filters:
 
-- `location` — city, ZIP, neighborhood string (e.g. `"Austin, TX"`, `"78704"`, `"Brooklyn, NY"`)
-- `bbox` — `"west,south,east,north"` decimal degrees (alternative to location)
-- `status` — `for_sale` | `for_rent` | `sold` (default `for_sale`)
-- `price_min`, `price_max` — integer dollars
-- `beds_min`, `beds_max`, `baths_min`, `baths_max` — integers
-- `sqft_min`, `sqft_max`, `year_built_min`, `year_built_max` — integers
-- `home_types` — comma-separated subset of: `house`, `condo`, `townhouse`, `multi_family`, `manufactured`, `lot`, `apartment`
-- `days_on_zillow` — one of `"1"`, `"7"`, `"14"`, `"30"`, `"90"`, `"6m"`, `"12m"`, `"24m"`, `"36m"`
-- `max_items` — integer, capped at 50 per call
+- `status`: `for_sale` | `for_rent` | `sold` (default `for_sale`)
+- `price_min`, `price_max`: integer dollars
+- `beds_min`, `beds_max`, `baths_min`, `baths_max`: integers
+- `sqft_min`, `sqft_max`, `year_built_min`, `year_built_max`: integers
+- `home_types`: comma-separated subset of `house`, `condo`, `townhouse`, `multi_family`, `manufactured`, `lot`, `apartment`
+- `days_on_zillow`: one of `"1"`, `"7"`, `"14"`, `"30"`, `"90"`, `"6m"`, `"12m"`, `"24m"`, `"36m"`
+- `max_items`: integer, capped at 50 per call
 
-Pass either `location` or `bbox` — at least one is required.
+A search returning 25 results consumes 25 credits.
 
 ## Authentication
 
-Set `ZILLAPI_KEY` to your Zillapi API key (format `zk_...`). Free key with 100 credits at <https://zillapi.com/signup> — no card.
+Set `ZILLAPI_KEY` to your Zillapi API key (format `zk_...`).
 
-## Pricing
+```bash
+export ZILLAPI_KEY="zk_..."
+```
 
-| Plan | Price | Credits | Rate limit | Top-ups |
-|---|---|---|---|---|
-| Free | $0 | 100 (one-time) | 20/min | not available |
-| Monthly | $5/mo | 1,000/month | 200/min | $4 per 1,000 |
-| Annual | $54/yr | 12,000 upfront | 300/min | $3 per 1,000 |
+Free key at <https://zillapi.com/signup>: 100 credits, no card required. Plans and current prices: <https://zillapi.com/pricing/>. Failed calls are not charged.
 
-One credit per listing returned. A search returning 25 results consumes 25 credits.
+## Errors
+
+The handler returns dicts, never raises:
+
+- `{"error": "auth", ...}`: `ZILLAPI_KEY` missing or invalid
+- `{"error": "HTTP 422", ...}`: bad filter values, check the parameter list above
+- `{"error": "HTTP 429", ...}`: rate limited, back off and retry
+- `{"error": "network", ...}`: DNS or connection failure
+
+## Reference
+
+- OpenAPI spec: <https://zillapi.com/openapi.json>
+- REST docs: <https://zillapi.com/api/properties/>
+- Hosted MCP server (alternative to this skill): <https://api.zillapi.com/mcp>
 
 ## Trademark
 

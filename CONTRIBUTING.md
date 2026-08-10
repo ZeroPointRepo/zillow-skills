@@ -18,7 +18,7 @@ Pull requests welcome for:
 ## Local development
 
 ```bash
-git clone https://github.com/nikhonit/zillow-skills.git
+git clone https://github.com/ZeroPointRepo/zillow-skills.git
 cd zillow-skills/skills/zillow-full
 ZILLAPI_KEY=zk_... python3 -m unittest discover tests
 ```

@@ -1,16 +1,16 @@
 {
   "name": "zillow-skills",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Agent skills for U.S. property data via Zillapi.com",
-  "homepage": "https://github.com/nikhonit/zillow-skills",
+  "homepage": "https://github.com/ZeroPointRepo/zillow-skills",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikhonit/zillow-skills.git"
+    "url": "https://github.com/ZeroPointRepo/zillow-skills.git"
   },
   "bugs": {
-    "url": "https://github.com/nikhonit/zillow-skills/issues"
+    "url": "https://github.com/ZeroPointRepo/zillow-skills/issues"
   },
-  "author": "Zillapi",
+  "author": "Zero Point Studio",
   "license": "MIT-0",
   "keywords": [
     "zillow",
