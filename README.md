@@ -1,12 +1,12 @@
-![Zillapi — Zillow Agent Skills](assets/zillapi-agent-skill.jpg)
+![Zillapi Zillow Agent Skills](assets/zillapi-agent-skill.jpg)
 
 # Zillow Skills: Property Data, Zestimates & Listings for AI Agents
 
-Zillow Skills let your AI agent **run comps, pull Zestimates, and scan for-sale, sold & rental listings** across 160M+ U.S. homes, plus photos, taxes, schools, and full price history, just by asking. No code, no scraping.
+Zillow Skills let your AI agent **run comps, pull Zestimates, and scan for-sale, sold & rental listings** across 160M+ U.S. homes, plus photos, taxes, schools, and full price history, just by asking. No code required.
 
 Zillapi is an independent service for Zillow-sourced data, not affiliated with, endorsed by, or sponsored by Zillow.
 
-Free to use: [grab a key](https://zillapi.com/signup) (100 credits, no card required) and you're calling Zillow data from Claude, ChatGPT, Cursor, or your own agent loop in under two minutes.
+Free to use: [grab a key](https://zillapi.com/signup) (100 credits, no card required) and you're calling Zillow data from Claude, ChatGPT, OpenClaw, Hermes Agent, or your own agent loop in under two minutes.
 
 Pure Python standard library. No dependencies. MIT-0 licensed.
 
@@ -67,4 +67,4 @@ Zillapi is an independent service and is not affiliated with, endorsed by, or sp
 
 ---
 
-[![Get started with Zillapi — 100 free credits](assets/zillapi-cta.jpg)](https://zillapi.com/signup)
+[![Get started with Zillapi, 100 free credits](assets/zillapi-cta.jpg)](https://zillapi.com/signup)
