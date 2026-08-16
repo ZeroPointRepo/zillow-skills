@@ -1,3 +1,5 @@
+![Zillapi — Zillow Agent Skills](assets/zillapi-agent-skill.jpg)
+
 # Zillow Skills: Property Data, Zestimates & Listings for AI Agents
 
 Zillow Skills let your AI agent **run comps, pull Zestimates, and scan for-sale, sold & rental listings** across 160M+ U.S. homes, plus photos, taxes, schools, and full price history, just by asking. No code, no scraping.
@@ -62,3 +64,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Security reports: [SECURITY.md](SECURITY
 ## Trademark
 
 Zillapi is an independent service and is not affiliated with, endorsed by, or sponsored by Zillow Group, Inc. "Zillow" and "Zestimate" are registered trademarks of Zillow Group, Inc.
+
+---
+
+[![Get started with Zillapi — 100 free credits](assets/zillapi-cta.jpg)](https://zillapi.com/signup)
