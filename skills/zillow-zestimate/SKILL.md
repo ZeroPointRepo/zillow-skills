@@ -57,7 +57,7 @@ Set `ZILLAPI_KEY` to your Zillapi API key (format `zk_...`).
 export ZILLAPI_KEY="zk_..."
 ```
 
-Free key at <https://zillapi.com/signup>: 100 credits, no card required. Plans and current prices: <https://zillapi.com/pricing/>. Failed calls are not charged.
+Free key at <https://zillapi.com/signup/>: 100 credits, no card required. Plans and current prices: <https://zillapi.com/pricing/>. Failed calls are not charged.
 
 ## Errors
 
