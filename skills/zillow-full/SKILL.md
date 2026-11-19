@@ -42,7 +42,7 @@ Nine tools over the Zillapi REST API. Every call consumes credits, so fire only 
 | `get_property_schools` | 1 | Assigned schools with GreatSchools ratings |
 | `get_listing_agent` | 1 | Listing agent and broker contact for an active listing |
 
-Pick the narrowest tool: `get_zestimate` for a valuation question beats fetching the full record. The full record returns 250+ fields, so prefer the sub-resource tools when the user wants one slice.
+Pick the narrowest tool: `get_zestimate` for a valuation question beats fetching the full record. The full record returns 200+ fields, so prefer the sub-resource tools when the user wants one slice.
 
 Parameter details and response field notes: see [reference.md](reference.md).
 

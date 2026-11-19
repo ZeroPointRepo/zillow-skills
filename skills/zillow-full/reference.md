@@ -16,7 +16,7 @@ Parameter details and response notes for every tool in this skill. All facts mat
 
 - `address`: street address string, minimum 6 characters. Loose strings work (`"123 Main St, Austin TX"`).
 - `status`: `FOR_SALE` | `RECENTLY_SOLD` | `FOR_RENT` (default `FOR_SALE`). Lookup statuses are uppercase; search statuses are lowercase (see search_listings).
-- `fields`: optional comma-separated dotted-path projection, e.g. `"zpid,price,zestimate,address.streetAddress"`. Use it to shrink the 250+ field record to the slice you need.
+- `fields`: optional comma-separated dotted-path projection, e.g. `"zpid,price,zestimate,address.streetAddress"`. Use it to shrink the 200+ field record to the slice you need.
 
 ### `lookup_property_by_url(url, status="FOR_SALE", extract_units="disabled", fields=None)`
 
