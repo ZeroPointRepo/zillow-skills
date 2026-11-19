@@ -32,9 +32,9 @@ Nine tools over the Zillapi REST API. Every call consumes credits, so fire only 
 
 | Tool | Credits | Use for |
 |---|---|---|
-| `lookup_property_by_address` | 1 | Full record from a US address (loose strings work, 6+ chars) |
+| `lookup_property_by_address` | 3; 1 if no property matches | Full record from a US address (loose strings work, 6+ chars) |
 | `lookup_property_by_url` | 1 | Full record from a pasted `zillow.com/homedetails/...` link |
-| `lookup_property_by_zpid` | 1 | Full record when the zpid is already known (cache-served when fresh) |
+| `lookup_property_by_zpid` | 1 | Full record when the zpid is already known |
 | `get_zestimate` | 1 | Just the Zestimate, rent Zestimate, tax assessed value, last sold price |
 | `search_listings` | 1 per result | For sale, for rent or sold listings by location or bbox plus filters |
 | `get_price_history` | 1 | List price changes, sale prices, withdrawals |
