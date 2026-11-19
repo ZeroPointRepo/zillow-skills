@@ -99,7 +99,7 @@ def lookup_property_by_url(url, status="FOR_SALE", extract_units="disabled", fie
 
 
 def lookup_property_by_zpid(zpid, fields=None):
-    """Look up a property by Zillow zpid. Cache-served when fresh."""
+    """Look up a property by Zillow zpid."""
     return _request(
         "GET",
         "/properties/" + str(zpid),
