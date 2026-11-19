@@ -27,7 +27,7 @@ npx skills add ZeroPointRepo/zillow-skills
 
 | Skill | Purpose | Cost |
 |---|---|---|
-| [`zillow-full`](skills/zillow-full) | Complete property data toolkit: address lookup, URL lookup, Zestimate, search, history, photos, schools, agent | 1 credit per call |
+| [`zillow-full`](skills/zillow-full) | Complete property data toolkit: address lookup, URL lookup, Zestimate, search, history, photos, schools, agent | 1 to 3 credits per call (address lookup 3, or 1 if no property matches; other calls 1) |
 | [`zillow-zestimate`](skills/zillow-zestimate) | Zestimate-only valuation lookups (lighter response) | 1 credit per call |
 | [`zillow-search`](skills/zillow-search) | Bounding-box and location-based listing search | 1 credit per listing returned |
 
