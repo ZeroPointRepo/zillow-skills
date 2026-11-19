@@ -33,7 +33,7 @@ If the user also wants photos, schools, agent contact or price history, use [zil
 
 ### `get_zestimate` (1 credit)
 
-Pass either `zpid` (preferred: cheaper, cache-served) or `address`. With only `address`, the handler resolves the zpid first.
+Pass either `zpid` (preferred: cheaper) or `address`. With only `address`, the handler resolves the zpid first.
 
 Returns:
 

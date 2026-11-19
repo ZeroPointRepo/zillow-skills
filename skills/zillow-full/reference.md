@@ -25,7 +25,7 @@ Parameter details and response notes for every tool in this skill. All facts mat
 
 ### `lookup_property_by_zpid(zpid, fields=None)`
 
-- Cheapest lookup: cache-served when fresh. Prefer it whenever a previous call already returned the zpid.
+- Cheapest lookup. Prefer it whenever a previous call already returned the zpid.
 
 ## `get_zestimate(zpid=None, address=None)`
 
